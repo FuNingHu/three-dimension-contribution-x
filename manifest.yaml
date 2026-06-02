@@ -1,0 +1,11 @@
+metadata:
+  vendorID: "funh"
+  urcapID: "three-dimension-contribution-x"
+  vendorName: "funh"
+  urcapName: "Three Dimension Contribution X"
+  version: 1.0.0
+artifacts:
+  webArchives:
+  - id: "three-dimension-contribution-x-frontend"
+    folder: "three-dimension-contribution-x-frontend"
+  

@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+three-dimension-contribution-x-frontend/node_modules/
+
+# Build outputs
+dist/
+three-dimension-contribution-x-frontend/dist/
+target/*.urcapx
+
+# Angular CLI cache
+.angular/
+three-dimension-contribution-x-frontend/.angular/
+
+# Lock files (do not commit)
+package-lock.json
+three-dimension-contribution-x-frontend/package-lock.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+.cache/

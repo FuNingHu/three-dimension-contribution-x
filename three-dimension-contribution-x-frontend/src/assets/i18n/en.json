@@ -1,0 +1,20 @@
+{
+        "application": {
+          "nodes": {
+            "funh-three-dimension-contribution-x-three-app": {
+              "title": "Three App",
+              "supportiveText": "Three App - Supportive Text"
+              }
+        }
+    },
+        "smart-skills": {
+          "funh-three-dimension-contribution-x-three-sk": {
+            "title": "Three Sk"
+            }
+    },
+        "sidebar-items": {
+          "funh-three-dimension-contribution-x-three-bar": {
+            "title": "Three Bar"
+            }
+    }
+}
