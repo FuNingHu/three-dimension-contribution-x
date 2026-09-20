@@ -1,0 +1,23 @@
+<section class="component">
+    <ur-heading size="medium">{{ 'sidebar-items.funh-three-dimension-contribution-x-three-bar.title' | translate }}</ur-heading>
+
+    <div class="toggle-row">
+        <ur-toggle-switch
+            [toggled]="gripperOn"
+            [label]="'sidebar-items.funh-three-dimension-contribution-x-three-bar.gripper' | translate"
+            [labelPos]="'after'"
+            [attr.data-testid]="'three_bar_gripper'"
+            (handleToggle)="onGripperToggle()"
+        ></ur-toggle-switch>
+    </div>
+
+    <div class="toggle-row">
+        <ur-toggle-switch
+            [toggled]="duckOn"
+            [label]="'sidebar-items.funh-three-dimension-contribution-x-three-bar.duck' | translate"
+            [labelPos]="'after'"
+            [attr.data-testid]="'three_bar_duck'"
+            (handleToggle)="onDuckToggle()"
+        ></ur-toggle-switch>
+    </div>
+</section>

@@ -1,6 +1,21 @@
-# Angular contribution
+# Three Dimension Contribution X
 
-This project is a template example of a URCap containing a Web frontend and a Docker backend
+Sidebar URCap that toggles glTF models in the PolyScope X 3D view.
+
+## Adding models to the 3D view
+
+The **3D Models** sidebar has two toggles: **Robotiq 2F-85** and **Duck**. On turns the model on with `GLTFLoader` from `assets/gltfs/` and `presenterAPI.sceneService`. Off removes it with `deleteObjects` using the same UUID.
+
+![Sidebar toggles add the duck in the world frame and the Robotiq 2F-85 on the tool flange](images/sidebar-3d-models.png)
+
+`addNewObject()` places the object at the world origin (near the robot base) and returns a scene-group ID, not the mesh UUID. Keep `gltf.scene.uuid` and use `addNewObjectAtPose`.
+
+| Model | Pose | sceneService |
+|---|---|---|
+| Robotiq 2F-85 | Flange frame, origin on the flange face, +Z outward. The glTF is authored Z-up; rotate −90° around X before handing it to Three.js. | `addNewObjectAtPose(scene, pose)` with `referenceFrame: 'flange'`, then `attachToolToFlange` with **`scene.uuid`** so the gripper follows the wrist. |
+| Duck | World `(0, 0.5, 0)` m, +90° around X (Khronos Duck is Y-up), scale 0.5. | `addNewObjectAtPose(scene, pose)` with `referenceFrame: 'world'`. |
+
+`attachToolToFlange` overwrites `pose.referenceFrame` to `'flange'` and only sets pose. Pass the mesh UUID, not the group ID.
 
 ## Build and Deploy Sample
 

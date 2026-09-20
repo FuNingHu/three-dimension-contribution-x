@@ -1,0 +1,248 @@
+{
+  "asset": {
+    "generator": "three-dimension-contribution-x Robotiq 2F-85",
+    "version": "2.0"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Robotiq2F85",
+      "mesh": 0
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Robotiq2F85",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1
+          },
+          "indices": 2,
+          "material": 0,
+          "mode": 4
+        },
+        {
+          "attributes": {
+            "POSITION": 3,
+            "NORMAL": 4
+          },
+          "indices": 5,
+          "material": 1,
+          "mode": 4
+        },
+        {
+          "attributes": {
+            "POSITION": 6,
+            "NORMAL": 7
+          },
+          "indices": 8,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "BlackHousing",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.06,
+          0.06,
+          0.07,
+          1.0
+        ],
+        "metallicFactor": 0.12,
+        "roughnessFactor": 0.68
+      }
+    },
+    {
+      "name": "Aluminum",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.82,
+          0.83,
+          0.85,
+          1.0
+        ],
+        "metallicFactor": 0.9,
+        "roughnessFactor": 0.3
+      }
+    },
+    {
+      "name": "StatusLed",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55,
+          0.85,
+          1.0,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.2
+      },
+      "emissiveFactor": [
+        0.25,
+        0.55,
+        0.9
+      ]
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 2868,
+      "type": "VEC3",
+      "min": [
+        -0.10090177354398752,
+        -0.04,
+        0.008
+      ],
+      "max": [
+        0.10090177354398752,
+        0.04,
+        0.20559446431027972
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 2868,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5123,
+      "count": 3348,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 588,
+      "type": "VEC3",
+      "min": [
+        -0.08198556109241299,
+        -0.0315,
+        0.0
+      ],
+      "max": [
+        0.08198556109241299,
+        0.041,
+        0.18848752192690577
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 588,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5123,
+      "count": 684,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 240,
+      "type": "VEC3",
+      "min": [
+        -0.0024,
+        0.0378,
+        0.0316
+      ],
+      "max": [
+        0.0024,
+        0.0396,
+        0.0364
+      ]
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 240,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5123,
+      "count": 288,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 34416,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 34416,
+      "byteLength": 34416,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 68832,
+      "byteLength": 6696,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 75528,
+      "byteLength": 7056,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 82584,
+      "byteLength": 7056,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 89640,
+      "byteLength": 1368,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 91008,
+      "byteLength": 2880,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 93888,
+      "byteLength": 2880,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 96768,
+      "byteLength": 576,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 97344,
+      "uri": "Robotiq2F85.bin"
+    }
+  ]
+}

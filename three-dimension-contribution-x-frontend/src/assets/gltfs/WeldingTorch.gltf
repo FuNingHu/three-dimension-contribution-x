@@ -1,0 +1,311 @@
+{
+  "asset": {
+    "generator": "three-dimension-contribution-x welding torch",
+    "version": "2.0"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "WeldingTorch",
+      "mesh": 0
+    }
+  ],
+  "meshes": [
+    {
+      "name": "WeldingTorch",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1
+          },
+          "indices": 2,
+          "material": 0,
+          "mode": 4
+        },
+        {
+          "attributes": {
+            "POSITION": 3,
+            "NORMAL": 4
+          },
+          "indices": 5,
+          "material": 1,
+          "mode": 4
+        },
+        {
+          "attributes": {
+            "POSITION": 6,
+            "NORMAL": 7
+          },
+          "indices": 8,
+          "material": 2,
+          "mode": 4
+        },
+        {
+          "attributes": {
+            "POSITION": 9,
+            "NORMAL": 10
+          },
+          "indices": 11,
+          "material": 3,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Aluminum",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.86,
+          0.87,
+          0.89,
+          1.0
+        ],
+        "metallicFactor": 0.85,
+        "roughnessFactor": 0.32
+      }
+    },
+    {
+      "name": "BlackHousing",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.07,
+          0.07,
+          0.08,
+          1.0
+        ],
+        "metallicFactor": 0.15,
+        "roughnessFactor": 0.72
+      }
+    },
+    {
+      "name": "Steel",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.74,
+          0.75,
+          0.77,
+          1.0
+        ],
+        "metallicFactor": 1.0,
+        "roughnessFactor": 0.28
+      }
+    },
+    {
+      "name": "CopperTip",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.8,
+          0.45,
+          0.2,
+          1.0
+        ],
+        "metallicFactor": 1.0,
+        "roughnessFactor": 0.38
+      }
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 624,
+      "type": "VEC3",
+      "min": [
+        -0.036,
+        -0.029,
+        0.016
+      ],
+      "max": [
+        0.132,
+        0.029,
+        0.063
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 624,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5123,
+      "count": 720,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 1680,
+      "type": "VEC3",
+      "min": [
+        -0.081613726874354,
+        -0.032,
+        0.010000000000000002
+      ],
+      "max": [
+        0.10836396103067893,
+        0.052,
+        0.16038946476376775
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 1680,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5123,
+      "count": 2016,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 1368,
+      "type": "VEC3",
+      "min": [
+        -0.0315,
+        -0.0315,
+        -0.004944953612062569
+      ],
+      "max": [
+        0.3469938837346736,
+        0.0315,
+        0.0405
+      ]
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 1368,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5123,
+      "count": 1656,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 480,
+      "type": "VEC3",
+      "min": [
+        0.345539682835545,
+        -0.0028,
+        -0.0007619029867300025
+      ],
+      "max": [
+        0.3642301585822275,
+        0.0028,
+        0.006761902986730003
+      ]
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "count": 480,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5123,
+      "count": 576,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 7488,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 7488,
+      "byteLength": 7488,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 14976,
+      "byteLength": 1440,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 16416,
+      "byteLength": 20160,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 36576,
+      "byteLength": 20160,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 56736,
+      "byteLength": 4032,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 60768,
+      "byteLength": 16416,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 77184,
+      "byteLength": 16416,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 93600,
+      "byteLength": 3312,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 96912,
+      "byteLength": 5760,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 102672,
+      "byteLength": 5760,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 108432,
+      "byteLength": 1152,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 109584,
+      "uri": "WeldingTorch.bin"
+    }
+  ]
+}

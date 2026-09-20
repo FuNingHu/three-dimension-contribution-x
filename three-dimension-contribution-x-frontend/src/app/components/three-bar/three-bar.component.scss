@@ -1,1 +1,13 @@
 @import '../../../styles.scss';
+
+.component {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-04, 1rem);
+    padding: var(--spacing-03, 0.75rem);
+}
+
+.toggle-row {
+    display: flex;
+    align-items: center;
+}

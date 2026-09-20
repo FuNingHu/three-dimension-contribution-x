@@ -1,5 +1,4 @@
 import { DoBootstrap, Injector, NgModule } from '@angular/core';
-import { ThreeAppComponent } from './components/three-app/three-app.component';
 import { ThreeSkComponent } from './components/three-sk/three-sk.component';
 import { ThreeBarComponent } from './components/three-bar/three-bar.component';
 
@@ -21,7 +20,6 @@ export const httpLoaderFactory = (http: HttpBackend) =>
 @NgModule({
 
   declarations: [
-      ThreeAppComponent,
       ThreeSkComponent,
       ThreeBarComponent
 ],
@@ -43,8 +41,6 @@ export class AppModule implements DoBootstrap {
   }
 
   ngDoBootstrap() {
-    const threeappComponent = createCustomElement(ThreeAppComponent, {injector: this.injector});
-    customElements.define('funh-three-dimension-contribution-x-three-app', threeappComponent);
     const threeskComponent = createCustomElement(ThreeSkComponent, {injector: this.injector});
     customElements.define('funh-three-dimension-contribution-x-three-sk', threeskComponent);
     const threebarComponent = createCustomElement(ThreeBarComponent, {injector: this.injector});
@@ -53,19 +49,15 @@ export class AppModule implements DoBootstrap {
 
   // This function is never called, because we don't want to actually use the workers, just tell webpack about them
   registerWorkersWithWebPack() {
-    new Worker(new URL('./components/three-app/three-app.behavior.worker.ts'
-        /* webpackChunkName: "three-app.worker" */, import.meta.url), {
-      name: 'three-app',
-      type: 'module'
-    });new Worker(new URL('./components/three-sk/three-sk.behavior.worker.ts'
+    new Worker(new URL('./components/three-sk/three-sk.behavior.worker.ts'
         /* webpackChunkName: "three-sk.worker" */, import.meta.url), {
       name: 'three-sk',
       type: 'module'
-    });new Worker(new URL('./components/three-bar/three-bar.behavior.worker.ts'
+    });
+    new Worker(new URL('./components/three-bar/three-bar.behavior.worker.ts'
         /* webpackChunkName: "three-bar.worker" */, import.meta.url), {
       name: 'three-bar',
       type: 'module'
     });
   }
 }
-

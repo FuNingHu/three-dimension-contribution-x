@@ -1,14 +1,7 @@
 {
-  "applicationNodes": [ 
-    {
-      "translationPath": "assets/i18n/",
-      "behaviorURI": "three-app.worker.js",
-      "presenterURI": "main.js",
-      "componentTagName": "funh-three-dimension-contribution-x-three-app"
-    }
-    ],
+  "applicationNodes": [],
   "programNodes": [],
-  "smartSkills": [ 
+  "smartSkills": [
     {
       "name": "funh-three-dimension-contribution-x-three-sk",
       "iconURI": "assets/icons/three-dimension-contribution-x.svg",
@@ -16,8 +9,9 @@
       "componentTagName": "funh-three-dimension-contribution-x-three-sk",
       "behaviorURI": "three-sk.worker.js",
       "translationPath": "assets/i18n/"
-    }],
-  "sidebarItems": [ 
+    }
+  ],
+  "sidebarItems": [
     {
       "name": "funh-three-dimension-contribution-x-three-bar",
       "iconURI": "assets/icons/three-dimension-contribution-x.svg",
@@ -25,6 +19,7 @@
       "componentTagName": "funh-three-dimension-contribution-x-three-bar",
       "behaviorURI": "three-bar.worker.js",
       "translationPath": "assets/i18n/"
-    }],
+    }
+  ],
   "operatorScreens": []
 }
