@@ -8,4 +8,5 @@ artifacts:
   webArchives:
   - id: "three-dimension-contribution-x-frontend"
     folder: "three-dimension-contribution-x-frontend"
+    devUrl: http://host.gateway.ip:4200/
   

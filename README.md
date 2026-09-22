@@ -56,6 +56,8 @@ Turn a toggle off to remove that model:
 await sceneService.deleteObjects([uuid]);
 ```
 
+Do not keep the UUID on the sidebar presenter. Hiding the sidebar destroys that instance, the toggle resets, and the next On adds a second object. Store the UUID in a module-level registry that lives with the frontend bundle (same lifetime as the 3D view). Reopening the sidebar restores the toggles and skips `addNewObjectAtPose` if the object is already there. A program or application node would keep the UUID across restarts after the 3D view has already dropped the mesh. Refresh or URCap reinstall clears both the registry and the scene.
+
 ## Build and Deploy Sample
 
 To build and deploy this sample, use the commands below. A rebuild of the project is required to see any changes made 

@@ -11,6 +11,7 @@ import {
 } from '@universal-robots/contribution-api';
 import { TranslateService } from '@ngx-translate/core';
 import { PATH } from '../../../generated/contribution-constants';
+import { getSceneModelUuid, isSceneModelOn, SceneModelId, setSceneModelUuid } from './scene-model-registry';
 
 interface SignalSidebarItemPresenter extends Omit<SidebarItemPresenter, 'robotSettings' | 'presenterAPI'> {
     robotSettings: InputSignal<RobotSettings | undefined>;
@@ -30,11 +31,8 @@ export class ThreeBarComponent implements SignalSidebarItemPresenter {
     readonly robotSettings = input<RobotSettings | undefined>();
     readonly presenterAPI = input<SidebarPresenterAPI | undefined>();
 
-    gripperOn = false;
-    duckOn = false;
-
-    private gripperUuid?: string;
-    private duckUuid?: string;
+    gripperOn = isSceneModelOn('gripper');
+    duckOn = isSceneModelOn('duck');
 
     readonly onLanguageChange = effect(() => {
         const language = this.robotSettings()?.language;
@@ -45,35 +43,28 @@ export class ThreeBarComponent implements SignalSidebarItemPresenter {
     });
 
     async onGripperToggle(): Promise<void> {
-        const next = !this.gripperOn;
-        try {
-            if (next) {
-                this.gripperUuid = await this.addGripper();
-            } else {
-                await this.removeObject(this.gripperUuid);
-                this.gripperUuid = undefined;
-            }
-            this.gripperOn = next;
-        } catch (error) {
-            console.error('Failed to toggle Robotiq 2F-85', error);
-        }
+        await this.toggleModel('gripper', this.addGripper.bind(this));
+        this.gripperOn = isSceneModelOn('gripper');
         this.cd.detectChanges();
     }
 
     async onDuckToggle(): Promise<void> {
-        const next = !this.duckOn;
-        try {
-            if (next) {
-                this.duckUuid = await this.addDuck();
-            } else {
-                await this.removeObject(this.duckUuid);
-                this.duckUuid = undefined;
-            }
-            this.duckOn = next;
-        } catch (error) {
-            console.error('Failed to toggle Duck', error);
-        }
+        await this.toggleModel('duck', this.addDuck.bind(this));
+        this.duckOn = isSceneModelOn('duck');
         this.cd.detectChanges();
+    }
+
+    private async toggleModel(id: SceneModelId, add: () => Promise<string>): Promise<void> {
+        try {
+            if (isSceneModelOn(id)) {
+                await this.removeObject(getSceneModelUuid(id));
+                setSceneModelUuid(id, undefined);
+                return;
+            }
+            setSceneModelUuid(id, await add());
+        } catch (error) {
+            console.error(`Failed to toggle ${id}`, error);
+        }
     }
 
     private async addGripper(): Promise<string> {
@@ -108,7 +99,11 @@ export class ThreeBarComponent implements SignalSidebarItemPresenter {
         if (!uuid) {
             return;
         }
-        await this.requireSceneService().deleteObjects([uuid]);
+        try {
+            await this.requireSceneService().deleteObjects([uuid]);
+        } catch (error) {
+            console.warn('Failed to delete scene object', uuid, error);
+        }
     }
 
     private async loadGltf(url: string): Promise<Object3D> {

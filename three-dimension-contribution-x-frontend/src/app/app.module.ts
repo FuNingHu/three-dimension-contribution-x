@@ -1,5 +1,4 @@
 import { DoBootstrap, Injector, NgModule } from '@angular/core';
-import { ThreeSkComponent } from './components/three-sk/three-sk.component';
 import { ThreeBarComponent } from './components/three-bar/three-bar.component';
 
 import { UIAngularComponentsModule } from '@universal-robots/ui-angular-components';
@@ -20,7 +19,6 @@ export const httpLoaderFactory = (http: HttpBackend) =>
 @NgModule({
 
   declarations: [
-      ThreeSkComponent,
       ThreeBarComponent
 ],
     imports: [
@@ -41,19 +39,12 @@ export class AppModule implements DoBootstrap {
   }
 
   ngDoBootstrap() {
-    const threeskComponent = createCustomElement(ThreeSkComponent, {injector: this.injector});
-    customElements.define('funh-three-dimension-contribution-x-three-sk', threeskComponent);
     const threebarComponent = createCustomElement(ThreeBarComponent, {injector: this.injector});
     customElements.define('funh-three-dimension-contribution-x-three-bar', threebarComponent);
   }
 
   // This function is never called, because we don't want to actually use the workers, just tell webpack about them
   registerWorkersWithWebPack() {
-    new Worker(new URL('./components/three-sk/three-sk.behavior.worker.ts'
-        /* webpackChunkName: "three-sk.worker" */, import.meta.url), {
-      name: 'three-sk',
-      type: 'module'
-    });
     new Worker(new URL('./components/three-bar/three-bar.behavior.worker.ts'
         /* webpackChunkName: "three-bar.worker" */, import.meta.url), {
       name: 'three-bar',
